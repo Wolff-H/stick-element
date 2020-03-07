@@ -19,7 +19,7 @@ $ npm install stick-element
 Notice: the target element must have a position defined
 
 ### basic
-    import stickElement from './stick-element'
+    import stickElement from 'stick-element'
 
     stickElement({
         element: target_element,
