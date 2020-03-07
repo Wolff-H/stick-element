@@ -2,11 +2,11 @@
   "name": "stick-element",
   "version": "1.0.0",
   "description": "$ npm install stick-element",
-  "main": "index.js",
+  "main": "src/stick-element.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "wolff-h",
+  "license": "MIT"
 }
