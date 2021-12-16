@@ -1,13 +1,17 @@
 {
-  "name": "stick-element",
-  "version": "2.0.0",
-  "description": "$ npm install stick-element",
-  "main": "es/index.mjs",
-  "types": "es/index.d.ts",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "wolff-h",
-  "license": "MIT"
+    "name": "stick-element",
+    "version": "2.0.0",
+    "description": "$ npm install stick-element",
+    "main": "es/index.mjs",
+    "types": "es/index.d.ts",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/wolff-h/stick-element.git"
+    },
+    "keywords": [],
+    "author": "wolff-h",
+    "license": "MIT"
 }
