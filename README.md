@@ -1,28 +1,18 @@
 # stick-element
 
-## install
+## Installation
 
-### npm
-$ npm install stick-element
+`$ npm install stick-element`
 
-### &lt;script&gt; // as a module
+## Usage
 
-&lt;script src="somepath/stick-element.js"&gt;&lt;/script&gt;
+Notice: The target element (sticker/container) must have its position property defined.
 
-### &lt;script&gt; // plain js
+### Basic
+```js
+import stickElement from "stick-element"
 
-&lt;script src="somepath/stick-element.js"&gt;&lt;/script&gt;  
-// delete the export sentence
-
-## usage
-
-Notice: the target element must have a position defined
-
-### basic
-    import stickElement from 'stick-element'
-
-    stickElement({
-        element: target_element,
-        container: target_container,
-        offset_limits: {top: 50, left: 50},
-    })
+stickElement(sticker, container, {
+    limits: { top: 50, left: 50 }
+})
+```
