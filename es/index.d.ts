@@ -32,8 +32,8 @@ export declare interface StickerData {
 
 /**
  * Make a sticker (element) "sticky" to its container (element) or just to itself.
- * @param container container.
- * @param sticker sticker.
+ * @param container container. For which container's scroll, the sticker will respond to.
+ * @param sticker sticker. If sticker is passed as null, clear all sticky relations on passed container.
  * @param limits movement constraint.
  * @param options options
  */

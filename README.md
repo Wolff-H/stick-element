@@ -16,3 +16,57 @@ stickElement(sticker, container, {
     limits: { top: 50, left: 50 }
 })
 ```
+
+## API
+
+```ts
+function stickElement(
+    container: HTMLElement,
+    sticker: HTMLElement|null,
+    options?:
+    {
+        limits?:
+        {
+            relative_to?: 'self'|'container',
+            top?: number,
+            left?: number,
+        },
+        destroy?: boolean,
+        override?: boolean,
+    },
+): void
+```
+
+- `container`
+
+    The container element. Container defines for which element's scroll, the sticker will respond to.
+
+- `sticker`
+
+    The sticker element. The element that is to be sticky.  
+    If sticker is passed as null, clear all sticky relations on passed container.
+
+- `options`
+
+    Other options.
+
+    - `limits`
+    
+        Movement constraint.
+
+        - `relative_to`
+        
+            The sticker will move with respect to the container or itself.
+        
+        - `top`, `left`
+        
+            When relative to container: max top/left margin.  
+            When relative to self: max top/left offset.
+
+    - `destroy`
+    
+        When passed `destroy` as true, from target container remove the sticky relation with target sticker.
+    
+    - `override`
+
+        When passed `override` as true, remove the current passed container-sticker relation.
