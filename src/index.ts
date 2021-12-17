@@ -39,10 +39,10 @@ interface StickerData
 
 /**
  * Make a sticker (element) "sticky" to its container (element) or just to itself.
- * @param container container. For which container's scroll, the sticker will respond to.
- * @param sticker sticker. If sticker is passed as null, clear all sticky relations on passed container.
- * @param movement movement constraint.
- * @param options options
+ * @param container Container. For which container's scroll, the sticker will respond to.
+ * @param sticker Sticker. If sticker is passed as null, clear all sticky relations on passed container.
+ * @param movement Movement constraint.
+ * @param options Options.
  */
 function stickElement(
     container: HTMLElement,
