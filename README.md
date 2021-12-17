@@ -44,7 +44,7 @@ function stickElement(
 - `sticker`
 
     The sticker element. The element that is to be sticky.  
-    If sticker is passed as null, clear all sticky relations on passed container.
+    When null, clear all sticky relations on passed container.
 
 - `options`
 
@@ -65,8 +65,8 @@ function stickElement(
 
     - `destroy`
     
-        If true, from target container remove the sticky relation with target sticker.
+        When true, from target container remove the sticky relation with target sticker.
     
     - `override`
 
-        If true, remove the passed container-sticker relation.
+        When true, remove the passed container-sticker relation.
