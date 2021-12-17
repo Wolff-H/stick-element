@@ -69,4 +69,4 @@ function stickElement(
     
     - `override`
 
-        When true, remove the passed container-sticker relation.
+        When true, in update override whole container relations to only contain target sticker.
