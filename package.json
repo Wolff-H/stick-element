@@ -3,7 +3,7 @@
     "version": "2.0.0",
     "description": "$ npm install stick-element",
     "main": "es/index.mjs",
-    "types": "es/index.d.ts",
+    "typings": "es/index.d.ts",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
