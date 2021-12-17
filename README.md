@@ -65,8 +65,8 @@ function stickElement(
 
     - `destroy`
     
-        When passed `destroy` as true, from target container remove the sticky relation with target sticker.
+        If true, from target container remove the sticky relation with target sticker.
     
     - `override`
 
-        When passed `override` as true, remove the current passed container-sticker relation.
+        If true, remove the passed container-sticker relation.
