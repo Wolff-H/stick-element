@@ -13,7 +13,7 @@ Notice: The target element (sticker/container) must have its position property d
 import stickElement from "stick-element"
 
 stickElement(sticker, container, {
-    limits: { top: 50, left: 50 }
+    movement: { top: 50, left: 50 }
 })
 ```
 
@@ -25,7 +25,7 @@ function stickElement(
     sticker: HTMLElement|null,
     options?:
     {
-        limits?:
+        movement?:
         {
             relative_to?: 'self'|'container',
             top?: number,
@@ -50,7 +50,7 @@ function stickElement(
 
     Other options.
 
-    - `limits`
+    - `movement`
     
         Movement constraint.
 

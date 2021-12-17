@@ -2,13 +2,13 @@
  * Make a sticker (element) "sticky" to its container (element) or just to itself.
  * @param container container. For which container's scroll, the sticker will respond to.
  * @param sticker sticker. If sticker is passed as null, clear all sticky relations on passed container.
- * @param limits movement constraint.
+ * @param movement movement constraint.
  * @param options options
  */
  function stickElement(container, sticker, options) {
     // defaults --------------------------------------------------------------------------------------------------------
     const default_options = {
-        limits: {
+        movement: {
             relative_to: 'container',
         },
         destroy: false,
@@ -56,7 +56,7 @@
                 sticker_original_left: parseInt(getComputedStyle(sticker).left, 10),
                 sticker_original_away_top: sticker.getBoundingClientRect().y - container.getBoundingClientRect().y,
                 sticker_original_away_left: sticker.getBoundingClientRect().x - container.getBoundingClientRect().x,
-                limits: _options.limits,
+                movement: _options.movement,
             },
         ]);
         container.addEventListener('scroll', scroll);
@@ -72,7 +72,7 @@
                     sticker_original_left: parseInt(getComputedStyle(sticker).left, 10),
                     sticker_original_away_top: sticker.getBoundingClientRect().y - container.getBoundingClientRect().y,
                     sticker_original_away_left: sticker.getBoundingClientRect().x - container.getBoundingClientRect().x,
-                    limits: _options.limits,
+                    movement: _options.movement,
                 },
             ]);
         }
@@ -93,7 +93,7 @@
                             sticker_original_left: parseInt(getComputedStyle(sticker).left, 10),
                             sticker_original_away_top: sticker.getBoundingClientRect().y - container.getBoundingClientRect().y,
                             sticker_original_away_left: sticker.getBoundingClientRect().x - container.getBoundingClientRect().x,
-                            limits: _options.limits,
+                            movement: _options.movement,
                         };
                 }
                 // add the passed sticker_data as a new one to container_data //
@@ -107,7 +107,7 @@
                             sticker_original_left: parseInt(getComputedStyle(sticker).left, 10),
                             sticker_original_away_top: sticker.getBoundingClientRect().y - container.getBoundingClientRect().y,
                             sticker_original_away_left: sticker.getBoundingClientRect().x - container.getBoundingClientRect().x,
-                            limits: _options.limits,
+                            movement: _options.movement,
                         });
                     }
                 }
@@ -125,14 +125,14 @@ function scroll(event) {
         const { sticker } = sticker_data;
         if (sticker) {
             // relative = self //
-            if (sticker_data.limits.relative_to === 'self') {
+            if (sticker_data.movement.relative_to === 'self') {
                 // when container scrolled out of certain distance, scroll sticker with the same vector //
                 // y-axis //
-                if (sticker_data.limits.top !== undefined) {
-                    if (container.scrollTop >= sticker_data.limits.top) {
+                if (sticker_data.movement.top !== undefined) {
+                    if (container.scrollTop >= sticker_data.movement.top) {
                         sticker.style.top =
                             sticker_data.sticker_original_top +
-                                (container.scrollTop - sticker_data.limits.top) +
+                                (container.scrollTop - sticker_data.movement.top) +
                                 'px';
                     }
                     else {
@@ -140,11 +140,11 @@ function scroll(event) {
                     }
                 }
                 // x-axis //
-                if (sticker_data.limits.left !== undefined) {
-                    if (container.scrollLeft >= sticker_data.limits.left) {
+                if (sticker_data.movement.left !== undefined) {
+                    if (container.scrollLeft >= sticker_data.movement.left) {
                         sticker.style.left =
                             sticker_data.sticker_original_left +
-                                (container.scrollLeft - sticker_data.limits.left) +
+                                (container.scrollLeft - sticker_data.movement.left) +
                                 'px';
                     }
                     else {
@@ -156,11 +156,11 @@ function scroll(event) {
             else {
                 // when margin grown over certain distance, scroll sticker with the same vector //
                 // y-axis //
-                if (sticker_data.limits.top !== undefined) {
-                    if (container.scrollTop >= (sticker_data.sticker_original_away_top - sticker_data.limits.top)) {
+                if (sticker_data.movement.top !== undefined) {
+                    if (container.scrollTop >= (sticker_data.sticker_original_away_top - sticker_data.movement.top)) {
                         sticker.style.top =
                             sticker_data.sticker_original_top +
-                                (container.scrollTop - (sticker_data.sticker_original_away_top - sticker_data.limits.top)) +
+                                (container.scrollTop - (sticker_data.sticker_original_away_top - sticker_data.movement.top)) +
                                 'px';
                     }
                     else {
@@ -168,11 +168,11 @@ function scroll(event) {
                     }
                 }
                 // x-axis //
-                if (sticker_data.limits.left !== undefined) {
-                    if (container.scrollLeft >= (sticker_data.sticker_original_away_left - sticker_data.limits.left)) {
+                if (sticker_data.movement.left !== undefined) {
+                    if (container.scrollLeft >= (sticker_data.sticker_original_away_left - sticker_data.movement.left)) {
                         sticker.style.left =
                             sticker_data.sticker_original_left +
-                                (container.scrollLeft - (sticker_data.sticker_original_away_left - sticker_data.limits.left)) +
+                                (container.scrollLeft - (sticker_data.sticker_original_away_left - sticker_data.movement.left)) +
                                 'px';
                     }
                     else {

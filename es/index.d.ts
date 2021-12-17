@@ -1,4 +1,4 @@
-export declare interface Limits {
+export declare interface Movement {
     relative_to: 'self' | 'container'
     top?: number
     bottom?: number
@@ -27,18 +27,18 @@ export declare interface StickerData {
     sticker_original_left: number
     sticker_original_away_top: number
     sticker_original_away_left: number
-    limits: Limits
+    movement: Movement
 }
 
 /**
  * Make a sticker (element) "sticky" to its container (element) or just to itself.
  * @param container container. For which container's scroll, the sticker will respond to.
  * @param sticker sticker. If sticker is passed as null, clear all sticky relations on passed container.
- * @param limits movement constraint.
+ * @param movement movement constraint.
  * @param options options
  */
  declare function stickElement(container: HTMLElement, sticker: HTMLElement | null, options?: {
-    limits?: {
+    movement?: {
         relative_to?: 'self' | 'container';
         top?: number;
         left?: number;
