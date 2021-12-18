@@ -1,3 +1,4 @@
+'use strict';
 /**
  * Make a sticker (element) "sticky" to its container (element) or just to itself.
  * @param container Container. For which container's scroll, the sticker will respond to.
@@ -5,7 +6,7 @@
  * @param movement Movement constraint.
  * @param options Options.
  */
- function stickElement(container, sticker, options) {
+function stickElement(container, sticker, options) {
     // defaults --------------------------------------------------------------------------------------------------------
     const default_options = {
         movement: {

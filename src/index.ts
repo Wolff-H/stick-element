@@ -1,3 +1,5 @@
+'use strict'
+
 interface Movement
 {
     relative_to: 'self'|'container'
