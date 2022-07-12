@@ -173,7 +173,7 @@ function stickElement(
 
                 if(target_sticker_data)
                 {
-                    console.log('update: update existed one');
+                    // update: update existed one
                     container_data[target_sticker_data_index] =
                     {
                         sticker: sticker,
@@ -187,7 +187,7 @@ function stickElement(
                 // add the passed sticker_data as a new one to container_data //
                 else
                 {
-                    console.log('update: add as new one');
+                    // update: add as new one
                     const container_data = map.get(container)
 
                     if(container_data)
